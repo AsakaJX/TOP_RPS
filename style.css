@@ -133,6 +133,11 @@ p {
   justify-content: center;
   align-items: center;
   gap: 10px;
+
+  /* Border color smooth color transition */
+  -webkit-transition: border-color 150ms linear;
+  -ms-transition: border-color 150ms linear;
+  transition: border-color 150ms linear;
 }
 
 .user-input-container li button span {
