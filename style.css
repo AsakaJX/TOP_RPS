@@ -82,7 +82,7 @@ body {
 }
 
 .game-choice-user,
-.game-choice-ai {
+.game-choice-computer {
   padding: 25px;
   border: 2px dotted var(--border-muted);
   border-radius: var(--border-radius);
@@ -93,7 +93,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 15px;
   max-width: 200px;
   flex: 1;
 }
@@ -116,6 +116,10 @@ p {
 }
 
 /* user choice buttons */
+
+.user-input-container li span {
+  pointer-events: none; /* prevent span from being clickable, messes up with getting user choice */
+}
 
 .user-input-container li button {
   height: 250px;

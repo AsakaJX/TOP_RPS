@@ -6,7 +6,7 @@
     <title>Super cool rock, paper, scissors project</title>
 
     <!-- JS -->
-    <script src="main.js"></script>
+    <script defer src="main.js"></script>
 
     <!-- STYLES -->
     <link rel="stylesheet" href="style.css" />
@@ -20,15 +20,17 @@
         <h1>Sassy Rock Paper Scissors game</h1>
       </div>
       <div class="main">
-        <h2>Play a game of Rock Paper Scissors, it's best of 5!</h2>
+        <h2 class="result-placeholder">
+          Play a game of Rock Paper Scissors, it's best of 5!
+        </h2>
         <div class="game-choices">
           <div class="game-choice-user">
             <div class="game-result-symbol">❔</div>
-            Player: <span id="game-score-user">0</span>
+            <div>Player: <span id="game-score-user">0</span></div>
           </div>
-          <div class="game-choice-ai">
+          <div class="game-choice-computer">
             <div class="game-result-symbol">❔</div>
-            AI: <span id="game-score-ai">0</span>
+            <div>AI: <span id="game-score-computer">0</span></div>
           </div>
         </div>
         <p><em>Make your choice!</em></p>
