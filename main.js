@@ -1,106 +1,106 @@
-function getUserChoice() {
-  let userChoice = '';
+// function getUserChoice() {
+//   let userChoice = '';
 
-  while (true) {
-    userChoice = prompt('Enter your choice: ', '');
+//   while (true) {
+//     userChoice = prompt('Enter your choice: ', '');
 
-    if (
-      userChoice === 'rock' ||
-      userChoice === 'paper' ||
-      userChoice === 'scissors'
-    ) {
-      break;
-    }
+//     if (
+//       userChoice === 'rock' ||
+//       userChoice === 'paper' ||
+//       userChoice === 'scissors'
+//     ) {
+//       break;
+//     }
 
-    console.log('incorrect input!\n\n');
-  }
+//     console.log('incorrect input!\n\n');
+//   }
 
-  return userChoice;
-}
+//   return userChoice;
+// }
 
-function getComputerChoice() {
-  let computerChoice = Math.floor(Math.random() * 3) + 1;
+// function getComputerChoice() {
+//   let computerChoice = Math.floor(Math.random() * 3) + 1;
 
-  return computerChoice == 1
-    ? 'rock'
-    : computerChoice == 2
-    ? 'paper'
-    : 'scissors';
-}
+//   return computerChoice == 1
+//     ? 'rock'
+//     : computerChoice == 2
+//     ? 'paper'
+//     : 'scissors';
+// }
 
-function isUserWinning(userChoice, computerChoice) {
-  if (userChoice === 'rock') {
-    return computerChoice === 'scissors' ? true : false;
-  } else if (userChoice === 'paper') {
-    return computerChoice === 'rock' ? true : false;
-  } else {
-    return computerChoice === 'paper' ? true : false;
-  }
-}
+// function isUserWinning(userChoice, computerChoice) {
+//   if (userChoice === 'rock') {
+//     return computerChoice === 'scissors' ? true : false;
+//   } else if (userChoice === 'paper') {
+//     return computerChoice === 'rock' ? true : false;
+//   } else {
+//     return computerChoice === 'paper' ? true : false;
+//   }
+// }
 
-function playRound(userChoice, computerChoice) {
-  let result = 'tie';
+// function playRound(userChoice, computerChoice) {
+//   let result = 'tie';
 
-  if (userChoice !== computerChoice) {
-    result =
-      isUserWinning(userChoice, computerChoice) === true ? 'user' : 'computer';
-  }
+//   if (userChoice !== computerChoice) {
+//     result =
+//       isUserWinning(userChoice, computerChoice) === true ? 'user' : 'computer';
+//   }
 
-  return result;
-}
+//   return result;
+// }
 
-let userScore = 0;
-let computerScore = 0;
+// let userScore = 0;
+// let computerScore = 0;
 
-function playGame() {
-  for (let currentRound = 1; currentRound <= 5; currentRound++) {
-    let userChoice = getUserChoice();
-    let computerChoice = getComputerChoice();
+// function playGame() {
+//   for (let currentRound = 1; currentRound <= 5; currentRound++) {
+//     let userChoice = getUserChoice();
+//     let computerChoice = getComputerChoice();
 
-    let roundWinner = playRound(userChoice, computerChoice);
+//     let roundWinner = playRound(userChoice, computerChoice);
 
-    // Track score
+//     // Track score
 
-    if (roundWinner === 'user') {
-      userScore++;
-    } else if (roundWinner === 'computer') {
-      computerScore++;
-    } else {
-      // if we want to add to both scores
-      // userScore++;
-      // computerScore++;
-    }
+//     if (roundWinner === 'user') {
+//       userScore++;
+//     } else if (roundWinner === 'computer') {
+//       computerScore++;
+//     } else {
+//       // if we want to add to both scores
+//       // userScore++;
+//       // computerScore++;
+//     }
 
-    // Displaying info
-    displayRoundInfo(currentRound, roundWinner, userChoice, computerChoice);
-  }
+//     // Displaying info
+//     displayRoundInfo(currentRound, roundWinner, userChoice, computerChoice);
+//   }
 
-  return userScore === computerScore
-    ? 'tie'
-    : userScore > computerScore
-    ? 'user'
-    : 'computer';
-}
+//   return userScore === computerScore
+//     ? 'tie'
+//     : userScore > computerScore
+//     ? 'user'
+//     : 'computer';
+// }
 
-function displayRoundInfo(currentRound, winner, userChoice, computerChoice) {
-  let winnerMessage =
-    winner === 'user' ? `beats` : winner === 'computer' ? `loses to` : 'equals';
+// function displayRoundInfo(currentRound, winner, userChoice, computerChoice) {
+//   let winnerMessage =
+//     winner === 'user' ? `beats` : winner === 'computer' ? `loses to` : 'equals';
 
-  console.log(
-    `Round #${currentRound} < Score: ${userScore} - ${computerScore} >`
-  );
+//   console.log(
+//     `Round #${currentRound} < Score: ${userScore} - ${computerScore} >`
+//   );
 
-  console.log(
-    'Choices -> user: ' + userChoice + ' computer: ' + computerChoice
-  );
+//   console.log(
+//     'Choices -> user: ' + userChoice + ' computer: ' + computerChoice
+//   );
 
-  console.log(
-    `${winner} ${
-      winner !== 'tie' ? 'wins ' : ''
-    }! [${userChoice} ${winnerMessage} ${computerChoice}]` + '\n\n'
-  );
-}
+//   console.log(
+//     `${winner} ${
+//       winner !== 'tie' ? 'wins ' : ''
+//     }! [${userChoice} ${winnerMessage} ${computerChoice}]` + '\n\n'
+//   );
+// }
 
-let gameResult = playGame();
+// let gameResult = playGame();
 
-console.log(`\n\n\nGame result: ${gameResult}\n\n\n`);
+// console.log(`\n\n\nGame result: ${gameResult}\n\n\n`);

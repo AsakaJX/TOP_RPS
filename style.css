@@ -1,0 +1,66 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+
+  font-family: 'Figtree';
+}
+
+:root {
+  --bg-dark: oklch(0.1 0.03 296);
+  --bg: oklch(0.15 0.03 296);
+  --bg-light: oklch(0.2 0.03 296);
+  --text: oklch(0.96 0.06 296);
+  --text-muted: oklch(0.76 0.06 296);
+  --highlight: oklch(0.5 0.06 296);
+  --border: oklch(0.4 0.06 296);
+  --border-muted: oklch(0.3 0.06 296);
+  --primary: oklch(0.76 0.1 296);
+  --secondary: oklch(0.76 0.1 116);
+  --danger: oklch(0.7 0.06 30);
+  --warning: oklch(0.7 0.06 100);
+  --success: oklch(0.7 0.06 160);
+  --info: oklch(0.7 0.06 260);
+
+  --border-radius: 8px;
+
+  font-size: 15px;
+}
+
+body {
+  height: 100%;
+  background-color: var(--bg-dark);
+  color: var(--text);
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 50px;
+}
+
+.user-input-buttons {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.user-input-buttons li button {
+  height: 250px;
+  width: 250px;
+
+  text-decoration: none;
+  background-color: var(--bg);
+  border: 3px solid var(--border);
+  border-radius: var(--border-radius);
+  color: var(--text);
+  font-size: 1.3rem;
+}
+
+.user-input-buttons li button:hover {
+  border-color: var(--highlight);
+}
