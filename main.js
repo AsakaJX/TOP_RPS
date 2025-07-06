@@ -6,7 +6,7 @@ function getUserChoice(event) {
 }
 
 function getComputerChoice() {
-  let computerChoice = Math.floor(Math.random() * 1) + 1;
+  let computerChoice = Math.floor(Math.random() * 3) + 1;
 
   return computerChoice == 1
     ? 'rock'
