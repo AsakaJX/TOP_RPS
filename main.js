@@ -6,7 +6,7 @@ function getUserChoice(event) {
 }
 
 function getComputerChoice() {
-  let computerChoice = Math.floor(Math.random() * 3) + 1;
+  let computerChoice = Math.floor(Math.random() * 1) + 1;
 
   return computerChoice == 1
     ? 'rock'
@@ -46,6 +46,10 @@ let roundCount = 0;
 let gameWinner = '';
 
 function resetGame() {
+  const userCounter = document.querySelector('#game-score-user');
+  const computerCounter = document.querySelector('#game-score-computer');
+  userCounter.textContent = 0;
+  computerCounter.textContent = 0;
   gameWinner = '';
   roundCount = 0;
   computerScore = 0;
@@ -53,6 +57,10 @@ function resetGame() {
 }
 
 function playGame(userChoiceButtonEvent) {
+  if (roundCount === 5) {
+    resetGame();
+  }
+
   roundCount++;
 
   let userChoice = getUserChoice(userChoiceButtonEvent);
@@ -86,10 +94,6 @@ function playGame(userChoiceButtonEvent) {
 
   // Displaying info
   displayRoundInfo(roundWinner, userChoice, computerChoice);
-
-  if (roundCount === 5) {
-    resetGame();
-  }
 }
 
 function displayRoundInfo(roundWinner, userChoice, computerChoice) {
