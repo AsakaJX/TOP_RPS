@@ -85,14 +85,14 @@ function playGame(userChoiceButtonEvent) {
       : 'ai';
 
   // Displaying info
-  displayRoundInfo(roundWinner);
+  displayRoundInfo(roundWinner, userChoice, computerChoice);
 
   if (roundCount === 5) {
     resetGame();
   }
 }
 
-function displayRoundInfo(roundWinner) {
+function displayRoundInfo(roundWinner, userChoice, computerChoice) {
   const userCounter = document.querySelector('#game-score-user');
   const computerCounter = document.querySelector('#game-score-computer');
 
@@ -101,6 +101,24 @@ function displayRoundInfo(roundWinner) {
 
   const userCard = document.querySelector('.game-choice-user');
   const computerCard = document.querySelector('.game-choice-computer');
+
+  const userChoiceSymbol = document.querySelector(
+    `.user-input-container #btn-${userChoice} span`
+  );
+
+  const computerChoiceSymbol = document.querySelector(
+    `.user-input-container #btn-${computerChoice} span`
+  );
+
+  const userSymbol = document.querySelector(
+    '.game-choice-user .game-result-symbol'
+  );
+  const computerSymbol = document.querySelector(
+    '.game-choice-computer .game-result-symbol'
+  );
+
+  userSymbol.textContent = userChoiceSymbol.textContent;
+  computerSymbol.textContent = computerChoiceSymbol.textContent;
 
   const resultPlaceholder = document.querySelector('.result-placeholder');
 
@@ -126,5 +144,18 @@ function displayRoundInfo(roundWinner) {
       computerCard.style.border = `2px dotted oklch(0.56 0.1 296)`;
       userCard.style.border = `2px dotted oklch(0.56 0.1 296)`;
       break;
+  }
+
+  if (roundCount === 5) {
+    if (gameWinner === 'user') {
+      userCard.style.border = `2px dotted oklch(0.7676 0.2195 160)`;
+      computerCard.style.border = ``;
+    } else if (gameWinner === 'ai') {
+      computerCard.style.border = `2px dotted oklch(0.7676 0.2195 160)`;
+      userCard.style.border = ``;
+    } else {
+      computerCard.style.border = `2px dotted oklch(0.56 0.1 296)`;
+      userCard.style.border = `2px dotted oklch(0.56 0.1 296)`;
+    }
   }
 }
