@@ -16,13 +16,23 @@
   </head>
   <body>
     <div class="main-container">
-      <h1 class="title">Sassy Rock Paper Scissors game.</h1>
-      <div class="game-main-container">
-        <!-- <h2>
-          You <span id="score-user">0</span> ~ <span id="score-ai">0</span> AI
-        </h2> -->
+      <div class="title">
+        <h1>Sassy Rock Paper Scissors game.</h1>
+      </div>
+      <div class="main">
+        <h2>Play a game of Rock Paper Scissors, it's best of 5!</h2>
+        <div class="game-choices">
+          <div class="game-choice-user">
+            <div class="game-result-symbol">❔</div>
+            Player: <span id="game-score-user">0</span>
+          </div>
+          <div class="game-choice-ai">
+            <div class="game-result-symbol">❔</div>
+            AI: <span id="game-score-ai">0</span>
+          </div>
+        </div>
         <p><em>Make your choice!</em></p>
-        <ul class="user-input-buttons">
+        <ul class="user-input-container">
           <li>
             <button id="btn-rock"><span>✊</span>Rock</button>
           </li>
@@ -33,6 +43,12 @@
             <button id="btn-scissors"><span>✌️</span>Scissors</button>
           </li>
         </ul>
+      </div>
+      <div class="footer">
+        <p>
+          Made by
+          <a href="https://github.com/asakajx" target="_blank">Asaka</a> 2025
+        </p>
       </div>
     </div>
   </body>

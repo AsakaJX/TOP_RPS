@@ -33,13 +33,14 @@ body {
   height: 100%;
   background-color: var(--bg-dark);
   color: var(--text);
+  text-align: center;
 }
 
 .main-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
+  justify-content: space-between;
   height: 100vh;
 }
 
@@ -50,16 +51,55 @@ body {
   border-bottom: 1px solid var(--border-muted);
 
   width: 100%;
-  text-align: center;
 }
 
-.game-main-container {
+.main {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100%;
-  gap: 25px;
+  gap: 40px;
+  margin: 50px 0;
+}
+
+.footer {
+  width: 100%;
+}
+
+.footer p {
+  padding: 10px;
+  font-size: 1rem;
+  background-color: var(--bg);
+}
+
+.game-choices {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.8rem;
+  max-width: 500px;
+}
+
+.game-choice-user,
+.game-choice-ai {
+  padding: 25px;
+  border: 2px dotted var(--border-muted);
+  border-radius: var(--border-radius);
+  background-color: var(--bg);
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  max-width: 200px;
+  flex: 1;
+}
+
+.game-result-symbol {
+  font-size: 4rem;
 }
 
 p {
@@ -67,13 +107,17 @@ p {
   color: var(--text-muted);
 }
 
-.user-input-buttons {
+/* user choice container */
+
+.user-input-container {
   list-style: none;
   display: flex;
   gap: 25px;
 }
 
-.user-input-buttons li button {
+/* user choice buttons */
+
+.user-input-container li button {
   height: 250px;
   width: 250px;
 
@@ -91,14 +135,14 @@ p {
   gap: 10px;
 }
 
-.user-input-buttons li button span {
+.user-input-container li button span {
   font-size: 2.5rem;
 }
 
-.user-input-buttons li button:hover {
+.user-input-container li button:hover {
   border-color: var(--highlight);
 }
 
-.user-input-buttons li button:active {
+.user-input-container li button:active {
   border-color: var(--info);
 }
