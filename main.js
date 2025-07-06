@@ -69,7 +69,6 @@ function playGame(userChoiceButtonEvent) {
   let roundWinner = playRound(userChoice, computerChoice);
 
   // Track score
-
   if (roundWinner === 'user') {
     userScore++;
   } else if (roundWinner === 'ai') {
