@@ -5,6 +5,7 @@
   padding: 0;
 
   font-family: 'Figtree';
+  box-sizing: border-box;
 }
 
 :root {
@@ -38,9 +39,32 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   height: 100vh;
-  gap: 50px;
+}
+
+.title {
+  justify-self: flex-start;
+  padding: 20px;
+  background-color: var(--bg);
+  border-bottom: 1px solid var(--border-muted);
+
+  width: 100%;
+  text-align: center;
+}
+
+.game-main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 25px;
+}
+
+p {
+  font-size: 1.3rem;
+  color: var(--text-muted);
 }
 
 .user-input-buttons {
@@ -58,9 +82,23 @@ body {
   border: 3px solid var(--border);
   border-radius: var(--border-radius);
   color: var(--text);
-  font-size: 1.3rem;
+  font-size: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-input-buttons li button span {
+  font-size: 2.5rem;
 }
 
 .user-input-buttons li button:hover {
   border-color: var(--highlight);
+}
+
+.user-input-buttons li button:active {
+  border-color: var(--info);
 }
